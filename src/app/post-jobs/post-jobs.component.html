@@ -1,0 +1,61 @@
+<mat-card>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form>
+      <ng-template matStepLabel>Enter Your Job Description</ng-template>
+      
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="jobPost.title"  placeholder="Job Title" name="title" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <textarea matInput [(ngModel)]="jobPost.description"  placeholder="description" name="description"></textarea>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="jobPost.addressLine1"  placeholder="Address Line 1" name="addressLine1">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="jobPost.addressLine2" placeholder="Address Line 2" name="addressLine2">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="jobPost.city" placeholder="City" name="city">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-select placeholder="JobTypes" required>
+          <mat-option *ngFor="let jobtype of jobtypeList" [value]="jobtype">{{jobtype.jobTitle}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+      <div>
+        <button mat-button matStepperNext (click)="createJobPost()">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form>
+      <ng-template matStepLabel>Make Payment</ng-template>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+
+
+
+</mat-card>
+
+
