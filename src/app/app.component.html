@@ -1,2 +1,21 @@
+<h1>File Upload</h1>
+<input type="button" (click)="onUpload()">
 
-<my-nav></my-nav>
+<input type="file" (change)="onFileSelected($event)">
+<br>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>File Name</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let doc of uploadedFiles">
+        <td><a href="/doc/{{doc.id}}">{{doc.docName}}</a></td>
+        <td><a href="/doc/{{doc.id}}" target="_blank">Download</a></td>
+    </tr>
+    </tbody>
+</table>

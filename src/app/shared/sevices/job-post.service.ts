@@ -13,4 +13,7 @@ export class JobPostService {
   getPostedJobsById(id: string): Observable<any> {
     return this.http.get('http://localhost:8080/all/jobs/user/'+id);
   }
+  public getAll(): Observable<any> {
+    return this.http.get('http://localhost:8080/doc');
+  }
 }

@@ -13,8 +13,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class PostJobsComponent implements OnInit {
 
-  minDate = new Date(2000, 0, 1);
-  maxDate = new Date(2020, 0, 1);
   jobPost: JobPost = new JobPost();
   jobtypes = new FormControl();
   jobtypeList: Array<any>;

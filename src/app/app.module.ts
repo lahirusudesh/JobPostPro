@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { RouterModule, Routes } from '@angular/router';
 import { ProviderProfileComponent } from './provider-profile/provider-profile.component';
+import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
 
 const appRoutes: Routes = [
   {path:'post-job',component:PostJobsComponent},
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
     AppComponent,
     PostJobsComponent,
     MyNavComponent,
-    ProviderProfileComponent
+    ProviderProfileComponent,
+    PaymentGatewayComponent
   ],
   imports: [
     BrowserModule,
